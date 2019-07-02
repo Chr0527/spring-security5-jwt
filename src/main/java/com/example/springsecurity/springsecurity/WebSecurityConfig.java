@@ -18,8 +18,8 @@ import org.springframework.security.web.authentication.logout.LogoutFilter;
 /**
  * Spring security的总配置类
  * 配置密码验证规则、拦截的url、登录接口地址、登录成功与失败后的处理器、各种异常处理器
- *  * GYB
- *  * 20190220
+ * * GYB
+ * * 20190220
  */
 @Configuration
 @EnableWebSecurity
@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureAuthentication(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder
                 // 设置UserDetailsService 获取user对象
-                .userDetailsService(this.userDetailsService)
+                .userDetailsService(this.userDetailsService)//验证密码
                 // 自定义密码验证方法
                 .passwordEncoder(new PasswordEncoder() {
                     //这个方法没用
